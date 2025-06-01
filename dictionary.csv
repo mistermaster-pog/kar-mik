@@ -1,0 +1,44 @@
+import pandas as pd
+
+# Fragment of the dictionary as structured data
+entries = [
+    ("niech… (wezwanie mocy)", "-un", "partykuł"),
+    ("popiół z ogniska", "árgrém", "rzeczownik"),
+    ("węgiel (drzewny)", "árskor", "rzeczownik"),
+    ("z / od", "arv", "przyimek"),
+    ("sadza", "árvel", "rzeczownik"),
+    ("popiół", "árven", "rzeczownik"),
+    ("rozsypać (na pył)", "árvenskor", "czasownik"),
+    ("spętany", "bindrakén", "przymiotnik"),
+    ("spętaj", "bindrakh", "czasownik"),
+    ("kwiat", "bláneth", "rzeczownik"),
+    ("mięso", "borléth", "rzeczownik"),
+    ("niedźwiedź", "borvén", "rzeczownik"),
+    ("dzik", "brólven", "rzeczownik"),
+    ("posłać znak", "délkar", "czasownik"),
+    ("odczytać (znak)", "délven", "czasownik"),
+    ("poświęcić", "dérakh", "czasownik"),
+    ("przebij", "dharven", "czasownik"),
+    ("ten / ta / to", "dhen", "zaimek"),
+    ("ziemia", "dhóm", "rzeczownik"),
+    ("krąg kamieni", "dhómkar", "rzeczownik"),
+    ("podłoga (klepisko)", "dhómlen", "rzeczownik"),
+    ("poniedziałek", "Dhómrith", "rzeczownik"),
+    ("trzewia świata (wnętrze Ziemi)", "dhómuth", "rzeczownik"),
+    ("uziemienie zła", "dhomvar", "czasownik"),
+    ("tutaj", "dhómven", "zaimek"),
+    ("resztka", "dhrákel", "liczebnik"),
+    ("magia", "dhráth", "rzeczownik"),
+    ("aż (do chwili)", "dhravé", "spójnik"),
+    ("wzbudzić (emocję, wspomnienie)", "dhrável", "czasownik"),
+    ("pamięć", "dhráven", "rzeczownik"),
+]
+
+# Create DataFrame
+df = pd.DataFrame(entries, columns=["polski", "starodhom", "czesc_mowy"])
+
+# Save to CSV
+csv_path = "/mnt/data/dictionary.csv"
+df[["polski", "starodhom"]].to_csv(csv_path, index=False, header=False)
+
+csv_path
